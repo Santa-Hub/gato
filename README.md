@@ -18,3 +18,6 @@
 * Verificación de compatibilidad.
 * Documentación de resultados.
 * Informe final.
+
+## QA Asignado:
+Juan Jose Quiceno Londoño
