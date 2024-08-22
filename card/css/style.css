@@ -1,0 +1,88 @@
+body {
+    background-image: repeating-linear-gradient(0deg, hsl(64, 58%, 89%) 0px, hsla(0, 0%, 100%, 0.08) 1px, transparent 1px, transparent 11px), repeating-linear-gradient(90deg, hsl(0, 0%, 65%) 0px, hsla(202, 0%, 65%, 0.08) 1px, transparent 1px, transparent 11px), linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20));
+}
+
+.card {
+    background-color: transparent;
+    border-radius: 10px;
+    margin: 80px auto;
+    text-align: center;
+    height: 450px;
+    width: 300px;
+    perspective: 1000px; /* Añadir perspectiva */
+}
+
+.card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.card__front, .card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 100px rgba(141, 141, 141, 0.9);
+}
+
+.card__front {
+    background-color: #181818;
+}
+
+.card__back {
+    background: linear-gradient(to bottom right, black, rgb(0, 5, 71), black);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: -50px;
+    animation: spin 2s linear infinite;
+}
+
+
+
+.card__content {
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.card__title {
+    color: #b8e3ff;
+    font-size: 28px;
+}
+
+.card__text {
+    color: white;
+    font-size: 16px;
+}
+
+.card__button {
+    background: linear-gradient(to bottom right, rgb(45, 76, 255), rgb(89, 160, 253), rgb(60, 128, 255));
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    height: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.card__button--back {
+    background-color: #181818;
+}
+
+/* Añadir rotación cuando la tarjeta se gira */
+.card.flipped .card__inner {
+    transform: rotateY(180deg);
+}
